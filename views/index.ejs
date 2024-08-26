@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baby Names</title>
+</head>
+<body>
+  <h1>Baby Names</h1>
+  <ul>
+    <% babyNames.forEach((name, index) => { %>
+      <li>
+        <%= name %>
+        <a href="/names/<%= index %>/edit">Edit</a>
+        <form action="/names/<%= index %>?_method=DELETE" method="POST" style="display:inline;">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+  <a href="/names/new">Add a new name</a>
+</body>
+</html>
